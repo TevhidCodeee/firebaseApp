@@ -24,7 +24,6 @@ export default function Login({navigation}) {
 
 
   async function handleFormSubmit(formValues){
-    //submit işleminin gerçekleşmesi durumu
 
     if(formValues.password!==formValues.repassword){
       showMessage({
@@ -46,12 +45,12 @@ export default function Login({navigation}) {
     } catch (error) {
       console.log(error);
       showMessage({
-        message:authErrorMessageParser(error.code),//Hata mesajını parse edip kullanıcıya gösterir
+        message:authErrorMessageParser(error.code),
         type: "error",
       }); 
       setLoading(false);
     }
-  }//aşkım bi snye ablaya şifre vericem
+  }
   }
 
   return(
@@ -72,8 +71,3 @@ export default function Login({navigation}) {
     </View>
   )
 }
-// Eğer handleChange kullanmazsanız, form alanlarındaki değişiklikleri Formik yakalayamaz ve yönetemez. Yani:
-
-// Input'lara yazı yazıldığında değerler güncellenmez
-// values objesi hep initialValues'daki başlangıç değerlerinde kalır
-// Form submit edildiğinde boş veya eski değerler gönderilir

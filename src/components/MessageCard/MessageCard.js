@@ -6,12 +6,11 @@ import {tr} from 'date-fns/locale'
 
 export default function MessageCard({message, onBanane}) {
 
-  //dislike durumunda onBanane methodu tetiklenicek
 
   const formattedDate = formatDistance(
-    parseISO(message.date), // Mesajın tarihini parse ediyoruz
-    new Date(), // Şu anki tarih ile karşılaştırıyoruz
-    { addSuffix: true, locale: tr } // Suffix ekleyip, Türkçe locale kullanıyoruz
+    parseISO(message.date),
+    new Date(),
+    { addSuffix: true, locale: tr } 
   );
   return(
     <View style={styles.container}>

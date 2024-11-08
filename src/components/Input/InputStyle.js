@@ -14,4 +14,3 @@ export default StyleSheet.create({
     }
 })
 
-//padding: Platform.OS === 'android' ? 0 : 5, platforma göre ayarladık buda responseve olur

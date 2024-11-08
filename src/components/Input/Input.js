@@ -10,5 +10,3 @@ export default function Input({placeholder, onType}) {
     </View>
   )
 }
-
-//autoCapitalize="none" büyük harfle başlamayı kapatıyor

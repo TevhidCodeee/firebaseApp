@@ -11,11 +11,11 @@ export default function ContentInputModal ({visible, onClose, onSend}){
     const [text, setText] = React.useState(null);
 
     function handleSend(){
-        if(!text){//text yoksa fonksiyonu çalıştırma
+        if(!text){
             return;
         }
-        onSend(text);//text componentini gönder
-        setText(null)//çıkmadanda setText i boş bir Stringe çevir
+        onSend(text);
+        setText(null)
         
     }
 
@@ -25,14 +25,14 @@ export default function ContentInputModal ({visible, onClose, onSend}){
         onSwipeComplete={onClose} 
         onBackdropPress={onClose} 
         onBackButtonPress={onClose}
-        swipeDirection="down"//modal ı aşağı çekerek kapatmaya yarıyor
+        swipeDirection="down"
         >
             <View style={styles.container}>
                 <View style={styles.input_container}>
                     <TextInput 
                     placeholder="Hadi Darla Milleti.." 
                     onChangeText={setText}
-                    multiline//bu parammetre ile yazılar modal sınırı içinde alt satıra geçicek
+                    multiline
                     />
                 </View>
                 <Button text="Gönder" onPress={handleSend}/>
@@ -44,15 +44,3 @@ export default function ContentInputModal ({visible, onClose, onSend}){
 
 
 
-//onChangeText={setText} state i günceller
-//modal ın açılır kapanırlığını messages ekranından kontrol ediyor olucaz
-//çünkü messages sayfasındaki butona basınca açıl dediğimizde açılıcak kapan dediğimizde kapanıcak
-//<Modal isVisible={visible}> visible değeri true old. modal görüntülenicek false 
-//old. geri gidicek
-//onBackdropPress = Arka plana basarak modalı kapatma
-//onSwipeComplete = Aşağı kaydırarak kapatma
-//onBackButtonPress = Android tarafında geri tuşuna basınca
-// onClose methodunu ContentInputModal ı çağırdığımız zamana onun visible değerini 
-// değiştirmek için kullanıcaz
-//onSend de mesajı butona basınca göndereceğimiz zaman tetiklenen bir method
-//onSend de property olarak text i göndersin

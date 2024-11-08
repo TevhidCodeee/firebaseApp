@@ -11,7 +11,7 @@ export default StyleSheet.create({
         borderTopRightRadius:10,
         height:deviceSize.height/3,
     },
-    input_container:{//Modal daki gönder butonunu aşağı indirdi
+    input_container:{
         flex:1
     },
     Modal:{

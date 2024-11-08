@@ -19,14 +19,11 @@ export default function App() {
 
   useEffect(() => {
     auth().onAuthStateChanged((user) =>{
-      setUserSession(!!user);//usr nesnesi bana dolu geliosa true boş geliosa false olarak set edicek
+      setUserSession(!!user);
     })
   },[])
 
-//onAuthStateChanged() yetkilendirici method
-  //harici bir stack yapısı oluşturduk
-  const AuthStack = () => {//AuthStack adında bir iç fonksiyon tanımlanıyor. 
-    //Bu, kimlik doğrulama ekranlarını içeriyor
+  const AuthStack = () => {
     return(
       <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="LoginPage" component={Login}/>
@@ -39,8 +36,7 @@ export default function App() {
     <NavigationContainer>
         {
           !userSession ? (
-            <AuthStack/>//Eğer kullanıcı giriş yapmamışsa (!userSession), AuthStack gösteriliyor
-          // <Stack.Screen name="AuthStack" component={AuthStack} options={{headerShown:false}}/>
+            <AuthStack/>
           ):(
       <Stack.Navigator>
           <Stack.Screen name="MessagePage" component={Messages} 
@@ -50,44 +46,7 @@ export default function App() {
             />}}/>
       </Stack.Navigator>
         )}
-          {/* <Stack.Screen name="SignPage" component={Sign}/> */}
       <FlashMessage position="top" />
     </NavigationContainer>
   )
 }
-
-
-//screenOptions={{headerShown:false}} = başlıkları kapatma
-
-// const checkDb=()=>{
-//   const referance = database().ref('books/')
-//  .. referance.once('value').then(snaphot =>{
-//     const response = snaphot.val();
-//     console.log(response)
-//   })
-// }
-
-// const setDb = ()=> {
-//   const reference = database().ref('car/rentable');
-//   reference.set({
-//     brand:'Audi',
-//     model:'A8',
-//     price:128
-//   })
-// }
-
-// const updateDb= ()=> {
-//   const reference = database().ref('car/rentable');
-//   reference.set({
-//     model:'A3'
-//   })
-// }
-
-// const pushDb = () => {
-//   const reference =database().ref('car/rentable');
-//   reference.push({
-//     brand:'Passat',
-//     model:'81',
-//     price:128
-//   })
-// }

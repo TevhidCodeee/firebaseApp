@@ -3,7 +3,7 @@ import colors from "../../styles/color";
 
 export default StyleSheet.create({
     container:{
-        position:"absolute",//ekranda yüzüyormuş gibi bir görüntü oluşturur
+        position:"absolute",
         bottom:20,
         right:20,
         borderRadius:50,

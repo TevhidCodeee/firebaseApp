@@ -9,14 +9,13 @@ const base_style= StyleSheet.create({
         alignItems:"center",
         borderRadius:7
     },
-    //değişmeyen özellikleri (sabit olanları yani) burda bırakıyoruz
 })
 
 export default {
 primary :StyleSheet.create({
-    ...base_style,//burdaki çıkartmadan sonra biz ne eklersek onu override etmiş olucak
+    ...base_style,
     container:{
-        ...base_style.container,//base_style daki containere bu containeri ekle
+        ...base_style.container,
         backgroundColor:colors.blue,
     },
     button:{
@@ -37,5 +36,3 @@ secondary:StyleSheet.create({
     }
 }),
 }
-
-//primary ve secondary objesi içerisine aldık
